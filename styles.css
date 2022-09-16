@@ -1,0 +1,186 @@
+/*começõ zerando o css*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*limita o tamanho da caixa ao max-width 580*/
+}
+
+/*tiro o style das ul*/
+ul {
+    list-style: none;
+}
+
+/*adiciono o background e configuro*/
+body {
+    background-color: #121214;
+    /* cor de fundo no decimal*/
+    background-image: url(./assets/bg.jpg);
+    /* onde esta a imagem */
+    background-position: top center;
+    /* quero centralizada a partir do topo */
+    background-size: 100% auto;
+    /* quero que ela pegue 100% da largura e automatico na vertical da pagina */
+    background-repeat: no-repeat;
+    /* quero que ela não se repita */
+}
+
+/*defino a fonte e altura da linha*/
+body * {
+    font-family: 'Inter', sans-serif;
+    line-height: 160%;
+    /*altura da linha*/
+}
+
+header {
+    padding-top: 32px;
+}
+
+header div {
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+
+    border-radius: 50%;
+
+    display: flex;
+    padding: 4px;
+    /*preenchimento de 4px*/
+
+    transition: transform 0.3s;
+}
+
+/*quando eu aplico div:hover , significa que vai aplicar propriedades  de tudo que estiver ali dentro*/
+header div:hover {
+    transform: scale(110%)
+}
+
+header div img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+/*configuro o quadro proincipal*/
+main {
+    display: grid;
+    /*diplay vem sempre em primeiro depois as outras config.*/
+    gap: 24px;
+    /*Espamento entre as sections */
+
+    margin-top: 32px;
+    margin-bottom: 32px;
+
+    max-width: 580px;
+    /*buscar no figma tamanho do quadro*/
+    width: 90%;
+    /*sobrando 10% de cada lado*/
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/*configuro as seções*/
+section {
+    color: white;
+    /*aqui ta a sacada do gradiente no boarder top das sections*/
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    padding-top: 4px;
+    border-radius: 10px;
+}
+
+/*configuro o espaçamento da distancia até as bordas*/
+section div {
+    background-color: #2A2634;
+    padding: 32px;
+    padding-top: 24px;
+    border-radius: 8px;
+}
+
+/*configuro a seção h2*/
+section h2 {
+    font-weight: 900;
+    font-size: 24px;
+    letter-spacing: -0.47px;
+}
+
+/*configuro a seção p*/
+section p {
+    letter-spacing: -0.18px;
+    color: #A1A1AA
+}
+
+/*configuro ul, lá em cima eu tinha zerado ela*/
+section ul {
+    display: flex;
+    /*todos elementos dentro da ul ficam um do lado do outro*/
+    gap: 16px;
+    /*só funciona de colocar display flex, porque é gap horizontal*/
+    margin-top: 24px;
+    transition: transform 3s;
+}
+
+section ul li:hover {
+    transform: scale(1.1)
+}
+
+/*configuro as classes*/
+/*para pegar uma classe começa com ponto + nome da classe*/
+/*para que as aplicações sejam aplicadas a imagem , colocar o elemento img*/
+.games-list img {
+    width: 90px;
+    border-radius: 8px;
+}
+
+.channel-list img {
+    width: 70px;
+    border-radius: 50%;
+    /*deixo redoondinho*/
+    border: 1px solid #71688b;
+}
+
+
+/*     Animations    */
+/*3depois se cria a header div com a animation: nome da função*/
+/*4 no delay colocar o backwards para puxar alguns elementos junto*/
+header div {
+    animation: fromTop 1s;
+    animation-delay: 2s backwards;
+}
+main section {
+    animation: fromBottom 0.7s;
+    animation-delay: 0.6s backwards;
+}
+ /*main pega o section de filho numero 1*/
+main section:nth-child(1) {
+    animation-delay: 0s ;
+}
+main section:nth-child(2) {
+    animation-delay: 0.2s ;
+}
+main section:nth-child(3) {
+    animation-delay: 0.4s ;
+}
+/*1cria uma função com um nome ex fromTop*/
+/*2de tal para tal lugar, transform: translateY(eixo Y)*/
+@keyframes fromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 100;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(+50px);
+    }
+    to {
+        opacity: 100;
+        transform: translateY(0);
+    }
+}
