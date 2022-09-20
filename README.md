@@ -4,8 +4,6 @@
 
 > Trilha Explorer 
 
-
-
 Projeto construído do evento Next Level Week da Rocketseat
 
 [clique aqui para acessar](https://adrianoandrade92.github.io/nlw/)
@@ -16,7 +14,6 @@ Projeto construído do evento Next Level Week da Rocketseat
 - CSS
 - Git e Github
 
-# contato
-
+## Contato
 adrianoandrade92@gmail.com
 
